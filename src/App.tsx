@@ -15,7 +15,7 @@ function App() {
         setIsTopOfPage(true);
         setSelectedPage(SelectedPage.Home);
       } else {
-        setIsTopOfPage(true);
+        setIsTopOfPage(false);
       }
     };
 
