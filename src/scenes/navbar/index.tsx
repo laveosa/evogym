@@ -3,50 +3,38 @@ import Logo from "@/assets/Logo.png";
 import Link from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { button } from "framer-motion/m";
+import { button, div } from "framer-motion/m";
 import { useState } from "react";
 import ActionButton from "@/components/ActionButton";
+import NavLinks from "./NavLinks";
 
 interface INavbar {
+  isTopOfPage: boolean;
   selectedPage: SelectedPage;
   setSelectedPage: (anchore: SelectedPage) => any;
 }
 
-const Navbar = ({ selectedPage, setSelectedPage }: INavbar) => {
+const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: INavbar) => {
   const flexBetween = "flex items-center justify-between";
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveMediunScreens = useMediaQuery("(min-width: 1060px)");
+  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
 
   return (
     <nav>
-      <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
+      <div
+        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
+      >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             <img src={Logo} alt="logo" />
             {isAboveMediunScreens ? (
               <div className={`${flexBetween} w-full`}>
-                <div className={`${flexBetween} gap-8 text-sm`}>
-                  <Link
-                    page="Home"
-                    selectedPage={selectedPage}
-                    setSelectedPage={(page) => setSelectedPage(page)}
-                  />
-                  <Link
-                    page="Benefits"
-                    selectedPage={selectedPage}
-                    setSelectedPage={(page) => setSelectedPage(page)}
-                  />
-                  <Link
-                    page="Our Classes"
-                    selectedPage={selectedPage}
-                    setSelectedPage={(page) => setSelectedPage(page)}
-                  />
-                  <Link
-                    page="Contact Us"
-                    selectedPage={selectedPage}
-                    setSelectedPage={(page) => setSelectedPage(page)}
-                  />
-                </div>
+                <NavLinks
+                  className={`${flexBetween} gap-8 text-sm`}
+                  selectedPage={selectedPage}
+                  setSelectedPage={setSelectedPage}
+                />
                 <div className={`${flexBetween} gap-8 font-bold`}>
                   <p>Sign In</p>
                   <ActionButton setSelectedPage={setSelectedPage}>
@@ -65,6 +53,23 @@ const Navbar = ({ selectedPage, setSelectedPage }: INavbar) => {
           </div>
         </div>
       </div>
+      {!isAboveMediunScreens && isMenuToggled && (
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
+          <div
+            className="flex
+           justify-end p-12"
+          >
+            <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <XMarkIcon className="w-6 h-6 text-gray-400" />
+            </button>
+          </div>
+          <NavLinks
+            className="ml-[33%] flex flex-col gap-10 text-2xl"
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+        </div>
+      )}
     </nav>
   );
 };
