@@ -78,12 +78,20 @@ export default function Home({ setSelectedPage }: IHome) {
           </motion.div>
         </div>
         {/* IMAGE */}
-        <div
+        <motion.div
           className="flex basis-3/5 justify-center md:z-10
               md:ml-40 md:mt-16 md:justify-items-end"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: 50 },
+            visible: { opacity: 1, x: 0 },
+          }}
         >
           <img src={HomePageGraphic} alt="home-pageGraphic" />
-        </div>
+        </motion.div>
       </motion.div>
       {/* SPONSORS */}
       {isAboveMediumScreens && (
