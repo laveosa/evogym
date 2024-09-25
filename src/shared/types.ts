@@ -4,3 +4,10 @@ export enum SelectedPage {
   OurClasses = "ourclasses",
   ContactUs = "contactus",
 }
+
+export interface IBenefit {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+  setSelectedPage?: (value: SelectedPage) => void;
+}
