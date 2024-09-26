@@ -5,7 +5,6 @@ import { SelectedPage } from "@/shared/types";
 
 import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
 import HText from "@/components/HText";
-import { p } from "framer-motion/client";
 
 type IContactUs = {
   setSelectedPage: (value: SelectedPage) => void;
