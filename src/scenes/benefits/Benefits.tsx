@@ -68,7 +68,7 @@ export default function Benefits({ setSelectedPage }: IBenefits) {
         </motion.div>
         {/* BENEFITS */}
         <motion.div
-          className="md:flex items-start justify-between gap-8 mt-5"
+          className="md:flex items-start justify-between items-stretch gap-8 mt-5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}

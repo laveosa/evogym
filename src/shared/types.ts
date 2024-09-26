@@ -11,3 +11,9 @@ export interface IBenefit {
   description: string;
   setSelectedPage?: (value: SelectedPage) => void;
 }
+
+export interface IGymClass {
+  image: string;
+  title: string;
+  description: string;
+}

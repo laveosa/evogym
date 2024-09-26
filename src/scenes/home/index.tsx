@@ -80,7 +80,7 @@ export default function Home({ setSelectedPage }: IHome) {
         {/* IMAGE */}
         <motion.div
           className="flex basis-3/5 justify-center md:z-10
-              md:ml-40 md:mt-16 md:justify-items-end"
+              md:ml-40 md:mt-16 md:justify-end"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}

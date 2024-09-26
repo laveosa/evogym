@@ -20,3 +20,14 @@ body,
   padding: 0;
   @apply text-gray-500;
 }
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+  background: gray;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}

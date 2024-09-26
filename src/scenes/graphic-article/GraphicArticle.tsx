@@ -10,7 +10,7 @@ interface IGraphicArticle {
 
 export default function GraphicArticle({ setSelectedPage }: IGraphicArticle) {
   return (
-    <div className="mx-auto min-h-full w-5/6 items-center justify-between gap-20 md:flex">
+    <div className="mx-auto min-h-[700px] w-5/6 items-center justify-between gap-20 md:flex">
       <motion.img
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
