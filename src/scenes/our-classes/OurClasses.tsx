@@ -82,16 +82,31 @@ export default function OurClasses({ setSelectedPage }: IOurClasses) {
             </p>
           </div>
         </motion.div>
-        <div
+        <motion.div
           ref={scrollRef}
           className="mx-auto w-5/6 mt-10 h-[353px] overflow-x-auto overflow-y-hidden rotate-[-90]"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
         >
-          <ul className="w-[2800px] whitespace-nowrap flex gap-6">
+          <motion.ul
+            className="w-[2800px] whitespace-nowrap flex gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.2 },
+              },
+            }}
+          >
             {gymClasses.map((item: IGymClass) => (
               <GymClass key={item.title} {...item} />
             ))}
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
       </motion.div>
     </section>
   );
