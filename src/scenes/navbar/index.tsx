@@ -1,12 +1,12 @@
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import Logo from "@/assets/Logo.png";
-import Link from "./Link";
+import { useState } from "react";
+
+import NavLinks from "./NavLinks";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { button, div } from "framer-motion/m";
-import { useState } from "react";
 import ActionButton from "@/components/ActionButton";
-import NavLinks from "./NavLinks";
+
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import Logo from "@/assets/Logo.png";
 
 interface INavbar {
   isTopOfPage: boolean;

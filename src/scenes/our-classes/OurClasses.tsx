@@ -59,7 +59,7 @@ export default function OurClasses({ setSelectedPage }: IOurClasses) {
 
   return (
     <section
-      id={`#${SelectedPage.OurClasses}`}
+      id={SelectedPage.OurClasses}
       className="w-full bg-primary-100 py-20 mt-40 md:mt-10"
     >
       <motion.div
