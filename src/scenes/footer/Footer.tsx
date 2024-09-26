@@ -3,11 +3,9 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import Logo from "@/assets/Logo.png";
 import { SelectedPage } from "@/shared/types";
 
-type IFooter = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
+type IFooter = {};
 
-export default function Footer({ setSelectedPage }: IFooter) {
+export default function Footer({}: IFooter) {
   const linkStyles =
     "mb-1 cursor-pointer text-primary-transition duration-300 hover:text-primary-500";
 
