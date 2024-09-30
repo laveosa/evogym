@@ -44,10 +44,7 @@ interface IBenefits {
 
 export default function Benefits({ setSelectedPage }: IBenefits) {
   return (
-    <section
-      id={SelectedPage.Benefits}
-      className="mx-auto min-h-full w-5/6 py-20"
-    >
+    <section id={SelectedPage.Benefits} className="mx-auto w-5/6 py-20">
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
       >
